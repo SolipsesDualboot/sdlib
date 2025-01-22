@@ -1,1 +1,1 @@
-void deserialize_json();
+void deserialize_json(FILE *infile);

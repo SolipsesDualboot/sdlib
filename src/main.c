@@ -1,8 +1,10 @@
+#include <stdio.h>
 #include "deserialize_json.h"
 
 
 int main()
 {
-    deserialize_json();
+    FILE fptr;
+    deserialize_json(&fptr);
     return 0;
 }
