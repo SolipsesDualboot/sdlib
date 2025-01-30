@@ -1,6 +1,7 @@
 CC	=	gcc
-SRC	=	src/main.c src/deserialize_json.c -Wall -Wextra
+SRC	=	src/* -Wall -Wextra
 BIN	=	-o bin/bin
+INCLUDES=	-I ./include
 
 
 default: NOTARGET
