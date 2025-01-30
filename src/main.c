@@ -20,8 +20,12 @@ int main()
 
     for(;;) /*! - Endless loop */
     {
+        char maintmpbuf[11] = "\nabcdefghi\0";
+        char* maintmpptr = &maintmpbuf[4];
+        printf("%s %s %li %li", maintmpbuf, maintmpptr, (long int)&maintmpbuf[4], (long int)&maintmpptr[1]);
         sil_Cin(name, CHAR_NAME_LIMIT, CLEAR_CIN);
         printf("\n%s\n", name);
+        break;
     }
 
     return 0;
