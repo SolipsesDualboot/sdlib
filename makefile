@@ -1,6 +1,6 @@
 CC	=	gcc
-SRC	=	src/* -Wall -Wextra
-BIN	=	-o bin/bin
+SRC	=	src/*.c -Wall -Wextra -Wpedantic
+BIN	=	-o ./bin/bin
 INCLUDES=	-I ./include
 
 
@@ -15,7 +15,9 @@ default: NOTARGET
 ##	$(GCC) $(SRC) $(BIN)
 
 build Build BUILD:
-	$(CC) $(SRC) $(BIN)
+	$(CC) $(SRC) -S
+	mv *.s ./bin
+	$(CC) bin/*.s $(BIN)
 
 
 doxygen Doxygen DOxygen DOXYGEN doc Doc DOC docs Docs DOCS:
@@ -23,4 +25,4 @@ doxygen Doxygen DOxygen DOXYGEN doc Doc DOC docs Docs DOCS:
 
 
 NOTARGET:
-	printf "\nPlease specify a target when using 'make'; 'LINUX' or 'WINDOWS'\n"
+	printf "\nPlease specify a target when using 'make'; 'DOXYGEN' and or 'BUILD'\n"
